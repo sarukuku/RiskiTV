@@ -93,20 +93,152 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+ 
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ccc;
+    overflow: hidden;
+}
+ 
+.mask {
+    width: 300%;
+    height: 100%;
+    background-color: #eee;
+}
 
+.view {
+    width: 33.25%;
+    height: 100%;
+    float: left;
+    background-color: #ddd;
+}
+ 
+ 
+.content {
+    width: 100%;
+    height: 100%;
+    background-color:#aaa;
+    position: relative;
+}
+ 
+.selected {
+    background: #fff;
+    font-weight: 700;
+}
 
+.clear {
+    clear:both;
+}
 
+h1, h2 {
+	margin: 0;
+}
 
+/* Calender stuff */
 
+.calender,
+.news,
+.feed {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 
+.calender-item {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 25%;
+	padding: 20px 20px;
+}
 
+.dtp-wrapper {
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+}
 
+.calender-date,
+.calender-time,
+.calender-place {
+	display: block;
+	width: 100%;
+	height: 33.3%;
+	background-color: white;
+	outline: 1px solid red;
+}
 
+.calender-title {
+	display: block;
+	float: right;
+	width: 74%;
+	height: 100%;
+	font-size: 40px;
+	background-color: white;
+	outline: 1px solid red;
+}
 
+/* News stuff */
 
+.news-item {
+	display: block;
+	width: 100%;
+	height: 25%;
+	padding: 20px 20px;
+}
 
+.news-date {
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+	background-color: white;
+	outline: 1px solid red;
+}
 
+.news-title {
+	display: block;
+	float: right;
+	width: 74%;
+	height: 100%;
+	font-size: 40px;
+	background-color: white;
+	outline: 1px solid red;
+}
+
+/* Feed stuff */
+
+.feed-twitter-container {
+	display: inline-block;
+	width: 49.5%;
+	height: 100%;
+	background-color: blue;
+	padding: 20px 20px;
+}
+
+.feed-foursquare-container {
+	display: inline-block;
+	float: right;
+	width: 49.5%;
+	height: 100%;
+	background-color: green;
+	padding: 20px 20px;
+}
 
 
 /* ==========================================================================
