@@ -9,10 +9,6 @@ function parseStats(data) {
 	var totalVisitors = data.response.venue.stats.usersCount;
 	var hereNow = data.response.venue.hereNow.count;
 
-	console.log(totalCheckins);
-	console.log(totalVisitors);
-	console.log(hereNow);
-
 	var context = {totalCheckins: totalCheckins, totalVisitors: totalVisitors, hereNow: hereNow}
     var html = fsqrtemplate(context);
     $(".feed-foursquare-container").append(html);
