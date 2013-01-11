@@ -8,13 +8,11 @@ var fullScreenState = 0;
 
 $(document).ready(function() {
     
-    /*
-scrollToNext();
     scrollToNext();
-*/
+    scrollToNext();
     
     // Set interval for scrollToNext
-    var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
  
     // If window is resized
     $(window).resize(function () { 
@@ -54,7 +52,7 @@ function resizePanel() {
          
 }
 
-function launchFullScreen(element) {
+function xlaunchFullScreen(element) {
   if(element.requestFullScreen) {
     element.requestFullScreen();
   } else if(element.mozRequestFullScreen) {
