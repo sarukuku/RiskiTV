@@ -4,7 +4,7 @@ var views = $('.view');
 var numViews = views.length;
 var changeSpeed = 5000;
 var backToStartSpeed = 500;
-var updateSpeed = 10000;
+var updateSpeed = 30000;
 var hashtag = 'turku';
 var fullScreenState = 0;
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
     scrollToNext();
   
     // Set interval for scrollToNext
-    var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
     // Set interval for updating all the info
     var updateInterval = setInterval(updateAllStreams, updateSpeed);
  
@@ -90,6 +90,7 @@ function toggleFullScreen() {
 
 function updateAllStreams() {
 	console.log('Running update feeds');
+  $(".tweets").empty();
 	getNews();
 	getFoursquare();
 	getTwitterFeed(hashtag);

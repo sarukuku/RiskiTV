@@ -6,7 +6,7 @@ function getTwitterFeed(hash) {
 
 function parseTwitterFeed(data) {
 	var results = data.results;
-	for (var i = 0; i < results.length; i++) {
+	for (var i = 0; i < 5; i++) {
 
 		var user = results[i].from_user;
 		var text = results[i].text;
@@ -14,7 +14,7 @@ function parseTwitterFeed(data) {
 
 		var context = {imgUrl: imgUrl, tweetUser: user, tweetText: text}
     	var html = twittertemplate(context);
-    	$(".feed-twitter-container").append(html);
+    	$(".tweets").append(html);
 	};
 }
 
