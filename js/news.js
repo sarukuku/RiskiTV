@@ -10,10 +10,12 @@ function parseTweets(data) {
 
 		var title = parseTitle(data[i].text);
 		var time = parseTime(data[i].created_at);
+		var url = parseUrl(data[i].text);
 
 		var context = {newstime: time, newstitle: title}
     	var html = newstemplate(context);
     	$(".news").append(html).fadeIn(100);
+    	$(".qrcode")[i].qrcode(url);
 	}
 }
 
@@ -25,6 +27,12 @@ function parseTitle(title) {
 		newtitle += " ";
 	};
 	return newtitle;
+}
+
+function parseUrl(title) {
+	title = title.split(" ");
+	var url = title[title.length];
+	return url;
 }
 
 function parseTime(time) {
