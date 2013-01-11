@@ -11,7 +11,7 @@ function parseStats(data) {
 
 	var context = {totalCheckins: totalCheckins, totalVisitors: totalVisitors, hereNow: hereNow}
     var html = fsqrtemplate(context);
-    $(".feed-foursquare-container").append(html);
+    $(".foursquares").append(html).fadeIn(100);
 }
 
 

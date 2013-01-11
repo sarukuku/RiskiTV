@@ -88,7 +88,12 @@ function toggleFullScreen() {
 
 function updateAllStreams() {
 	console.log('Running update feeds');
-  $(".tweets").empty();
+  $(".tweets").fadeOut("fast", function(){
+    $(".tweets").empty();
+  });
+  $(".foursquares").fadeOut("fast", function(){
+    $(".foursquares").empty();
+  });
 	getNews();
 	getFoursquare();
 	getTwitterFeed(hashtag);
