@@ -14,7 +14,7 @@ $(document).ready(function() {
     scrollToNext();
   
     // Set interval for scrollToNext
-    var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
     // Set interval for updating all the info
     var updateInterval = setInterval(updateAllStreams, updateSpeed);
  
@@ -88,6 +88,7 @@ function toggleFullScreen() {
 
 function updateAllStreams() {
 	console.log('Running update feeds');
+  $(".tweets").empty();
 	getNews();
 	getFoursquare();
 	getTwitterFeed(hashtag);
