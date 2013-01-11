@@ -240,6 +240,27 @@ h1, h2 {
 	padding: 20px 20px;
 }
 
+.checkin-total,
+.user-total,
+.here-now {
+	display: block;
+	width: 100%;
+	height: 33.3333%;
+	background-color: white;
+	border: 1px solid red;	
+}
+
+.feed-foursquare-container h1 {
+	text-align: center;
+}
+
+.fosquare-number {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 160px;
+}
+
 
 /* ==========================================================================
    Helper classes
