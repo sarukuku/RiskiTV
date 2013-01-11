@@ -2,7 +2,7 @@
 var currenView = 0;
 var views = $('.view');
 var numViews = views.length;
-var changeSpeed = 5000;
+var changeSpeed = 8000;
 var backToStartSpeed = 500;
 var updateSpeed = 30000;
 var hashtag = 'turku';
@@ -12,6 +12,7 @@ $(document).ready(function() {
 
     //scrollToNext();
     //scrollToNext();
+
   
     // Set interval for scrollToNext
     var scrollInterval = setInterval(scrollToNext, changeSpeed);
@@ -110,8 +111,4 @@ function updateAllStreams() {
 	getFoursquare();
 	
 	// TODO: Calendar feed
-}
-
-function debug() {
-	console.log("Current view: " + currenView + " Views: " + views + " numViews: " + numViews + " changeSpeed: " + changeSpeed + " backToStartSpeed: " + backToStartSpeed);
 }
