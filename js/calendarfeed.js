@@ -42,11 +42,6 @@ function listEvents(root, divId) {
     var starttime = formatTime(start);
     var startdate = formatDate(start);
 
-    console.log("Tapahtuma: " + title);
-    console.log("Päivämäärä: " + startdate);
-    console.log("Alkaa: " + starttime);
-    console.log("Paikka: " + location);
-
     var context = {caldate: startdate, caltime: starttime, callocation: location, caltitle: title}
     var html = template(context);
     $(".calender").append(html);
