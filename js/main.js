@@ -14,7 +14,7 @@ scrollToNext();
 */
     
     // Set interval for scrollToNext
-    var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
  
     // If window is resized
     $(window).resize(function () { 
