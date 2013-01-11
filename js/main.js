@@ -2,13 +2,13 @@
 var currenView = 0;
 var views = $('.view');
 var numViews = views.length;
-var changeSpeed = 2000;
+var changeSpeed = 5000;
 var backToStartSpeed = 500;
 var fullScreenState = 0;
 
 $(document).ready(function() {
 
-    //scrollToNext();
+    scrollToNext();
     scrollToNext();
   
     // Set interval for scrollToNext

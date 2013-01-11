@@ -1,4 +1,4 @@
-function getTweets() {
+function getNews() {
 	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=asteriskiry&count=4&include_entities=1&callback=?', function(data){
 		parseTweets(data);
 	});
@@ -44,4 +44,4 @@ function parseTime(time) {
 
 var tweetsource   = $("#news-template").html();
 var tweettemplate = Handlebars.compile(tweetsource);
-getTweets();	
+getNews();

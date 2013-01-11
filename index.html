@@ -50,11 +50,11 @@
 			            <div class="content">
 				            <div class="news">
 					            <script id="news-template" type="text/x-handlebars-template">
-                                    <div class="news-item">
-                                        <h2 class="news-date">Uutinen julkaistu <br />{{newstime}}</h2>
-                                        <h2 class="news-title">{{newstitle}}</h2>
-                                    </div>
-                                </script>
+                        <div class="news-item">
+                            <h2 class="news-date">Uutinen julkaistu <br />{{newstime}}</h2>
+                            <h2 class="news-title">{{newstitle}}</h2>
+                        </div>
+                      </script>
 				            </div>
 			            </div>
 			        </div>
@@ -62,24 +62,33 @@
 			        <div class="view">
 			            <div class="content">
 				            <div class="feed">
-					            
-					            <div class="feed-twitter-container"></div>
+					            <div class="feed-twitter-container">
+						            <img src="img/twitter-logo.png" alt="twitter logo" class="twitter-logo" />
+						          
+						          	<script id="tweet-template" type="text/x-handlebars-template">  
+							            <div class="tweet">
+								            <img src="{{imgUrl}}" alt="profile picture" />
+								            <h2>{{tweetText}}</h2>
+							            </div>
+						          	</script>      
+					            </div>
 					            
 					            <div class="feed-foursquare-container">
 						            <script id="fsqr-template" type="text/x-handlebars-template">
-                                        <div class="checkin-total">
-                                            <h1>Total Checkins</h1>
-                                            <h2 class="fosquare-number">{{totalCheckins}}</h2>
-                                        </div>
-                                        <div class="user-total">
-                                            <h1>Total Visitors</h1>
-                                            <h2 class="fosquare-number">{{totalVisitors}}</h2>
-                                        </div>
-                                        <div class="here-now">
-                                            <h1>Here Now</h1>
-                                            <h2 class="fosquare-number">{{hereNow}}</h2>
-                                        </div>
-                                    </script>
+                          <img src="img/foursquare-logo.png" alt="foursquare logo" class="foursquare-logo" />
+                          <div class="checkin-total">
+                              <h1>Total Checkins</h1>
+                              <h2 class="fosquare-number">{{totalCheckins}}</h2>
+                          </div>
+                          <div class="user-total">
+                              <h1>Total Visitors</h1>
+                              <h2 class="fosquare-number">{{totalVisitors}}</h2>
+                          </div>
+                          <div class="here-now">
+                              <h1>Here Now</h1>
+                              <h2 class="fosquare-number">{{hereNow}}</h2>
+                          </div>
+                        </script>
 					            </div>
 					            
 				            </div>
@@ -95,8 +104,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
         <script src="js/handlebars.js"></script>
         <script src="js/calendarfeed.js"></script>
-        <script src="js/tweet.js"></script>
-        <script src="js/twitter.js"></script>
+        <script src="js/news.js"></script>
         <script src="js/foursquare.js"></script>
         <script type="text/javascript" src="http://www.google.com/calendar/feeds/asteriskiry@gmail.com/public/full?alt=json-in-script&callback=insertAgenda&orderby=starttime&max-results=4&singleevents=true&sortorder=ascending&futureevents=true"></script>
         <script src="js/plugins.js"></script>
