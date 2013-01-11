@@ -13,7 +13,7 @@ function parseTweets(data) {
 
 		var context = {newstime: time, newstitle: title}
     	var html = newstemplate(context);
-    	$(".news").append(html);
+    	$(".news").append(html).fadeIn(100);
 	}
 }
 

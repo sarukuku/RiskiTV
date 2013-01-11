@@ -10,11 +10,11 @@ var fullScreenState = 0;
 
 $(document).ready(function() {
 
-    scrollToNext();
-    scrollToNext();
+    //scrollToNext();
+    //scrollToNext();
   
     // Set interval for scrollToNext
-    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    var scrollInterval = setInterval(scrollToNext, changeSpeed);
     // Set interval for updating all the info
     var updateInterval = setInterval(updateAllStreams, updateSpeed);
  
@@ -88,15 +88,27 @@ function toggleFullScreen() {
 
 function updateAllStreams() {
 	console.log('Running update feeds');
-  $(".tweets").fadeOut("fast", function(){
+  
+  $(".calender").fadeOut(100, function(){
+    $(".calender").empty();
+  });
+  getCalendar();
+
+  $(".news").fadeOut(100, function(){
+    $(".news").empty();
+  });
+  getNews();
+
+  $(".tweets").fadeOut(100, function(){
     $(".tweets").empty();
   });
-  $(".foursquares").fadeOut("fast", function(){
+  getTwitterFeed(hashtag);
+
+  $(".foursquares").fadeOut(100, function(){
     $(".foursquares").empty();
   });
-	getNews();
 	getFoursquare();
-	getTwitterFeed(hashtag);
+	
 	// TODO: Calendar feed
 }
 
