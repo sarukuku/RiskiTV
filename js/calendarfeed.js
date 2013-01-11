@@ -1,37 +1,58 @@
-/*
- * jGFeed 1.0 - Google Feed API abstraction plugin for jQuery
- *
- * Copyright (c) 2009 jQuery HowTo
- *
- * Licensed under the GPL license:
- *   http://www.gnu.org/licenses/gpl.html
- *
- * URL:
- *   http://jquery-howto.blogspot.com
- *
- * Author URL:
- *   http://me.boo.uz
- *
- */
-(function($){$.extend({jGFeed:function(url,fnk,num,key){if(url==null){return false;}var gurl="http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q="+url;if(num!=null){gurl+="&num="+num;}if(key!=null){gurl+="&key="+key;}$.getJSON(gurl,function(data){if(typeof fnk=="function"){fnk.call(this,data.responseData.feed);}else{return false;}});}});})(jQuery);
+function formatTime(timestamp) {
+  var arr = timestamp.split("T");
+  var time = '';
+  if (arr.length > 1) {
+    time = arr[1].split(":");
+    time = time[0] + ":" + time[1];
+  };
+  return time;
+}
 
-(function($) {
-	if ($('ul#ajat').length != 0) {
-		$.jGFeed('https://www.google.com/calendar/feeds/asteriskiry%40gmail.com/public/full-noattendees?futureevents=true&singleevents=true&orderby=starttime&sortorder=ascending', function(feeds){
-	  		// Check for errors
-	  		if(!feeds){
-	    		// there was an error
-	    		return false;
-	  		}
-	  		// do whatever you want with feeds here
-	  		console.log(feeds);
-		}, 5);
-	}
-	function kaunistaAika(aikaleima) {
-		var days = ['Su','Ma','Ti','Ke','To','Pe','La'];
-		var myDate = new Date(aikaleima);
-		var dayOfWeek = days[myDate.getDay()]; // dayOfWeek == 'Tuesday'
-		var apu = aikaleima.split('-');
-		return dayOfWeek + ' ' + apu[2] + '.' + apu[1] + '.' + apu[0];
-	}
-})(jQuery);
+function formatDate(timestamp) {
+  var arr = timestamp.split("T");
+  var date = arr[0].split("-");
+  var day = date[2];
+  var month = date[1];
+  var year = date[0];
+  return day + "." + month + "." + year;
+}
+
+/**
+ * Creates an unordered list of events in a human-readable form
+ *
+ * @param {json} root is the root JSON-formatted content from GData
+ * @param {string} divId is the div in which the events are added
+ */ 
+function listEvents(root, divId) {
+  var feed = root.feed;
+
+  // get information from the feed
+  for (var i = 0; i < feed.entry.length; i++) {
+    var entry = feed.entry[i];
+    var title = entry.title.$t;
+    var start = entry['gd$when'][0].startTime;
+    var location = entry['gd$where'][0].valueString;
+
+    // convert timestamps
+    var starttime = formatTime(start);
+    var startdate = formatDate(start);
+
+    console.log("Tapahtuma: " + title);
+    console.log("Päivämäärä: " + startdate);
+    console.log("Alkaa: " + starttime);
+    console.log("Paikka: " + location);
+
+  }
+
+}
+
+/**
+ * Callback function for the GData json-in-script call
+ * Inserts the supplied list of events into a div of a pre-defined name
+ * 
+ * @param {json} root is the JSON-formatted content from GData
+ */ 
+function insertAgenda(root) {
+  listEvents(root, 'agenda');
+}
+//-->
