@@ -22,7 +22,12 @@ function formatDate(timestamp) {
  *
  * @param {json} root is the root JSON-formatted content from GData
  * @param {string} divId is the div in which the events are added
- */ 
+ */
+
+ // creating calendar template
+var source   = $("#cal-template").html();
+var template = Handlebars.compile(source);
+
 function listEvents(root, divId) {
   var feed = root.feed;
 
@@ -41,6 +46,10 @@ function listEvents(root, divId) {
     console.log("Päivämäärä: " + startdate);
     console.log("Alkaa: " + starttime);
     console.log("Paikka: " + location);
+
+    var context = {caldate: startdate, caltime: starttime, callocation: location, caltitle: title}
+    var html = template(context);
+    $(".calender").append(html);
 
   }
 
