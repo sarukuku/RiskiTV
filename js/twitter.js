@@ -14,7 +14,7 @@ function parseTwitterFeed(data) {
 
 		var context = {imgUrl: imgUrl, tweetUser: user, tweetText: text}
     	var html = twittertemplate(context);
-    	$(".tweets").append(html).fadeIn("fast");
+    	$(".tweets").append(html).fadeIn(100);
 	};
 }
 
