@@ -10,11 +10,9 @@ function parseTweets(data) {
 
 		var title = parseTitle(data[i].text);
 		var time = parseTime(data[i].created_at);
-		console.log(title);
-		console.log(time);
 
 		var context = {newstime: time, newstitle: title}
-    	var html = template(context);
+    	var html = tweettemplate(context);
     	$(".news").append(html);
 	}
 }
@@ -44,6 +42,6 @@ function parseTime(time) {
 
 
 
-var source   = $("#news-template").html();
-var template = Handlebars.compile(source);
+var tweetsource   = $("#news-template").html();
+var tweettemplate = Handlebars.compile(tweetsource);
 getTweets();	
