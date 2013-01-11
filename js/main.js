@@ -4,7 +4,7 @@ var views = $('.view');
 var numViews = views.length;
 var changeSpeed = 5000;
 var backToStartSpeed = 500;
-var updateSpeed = 10000;
+var updateSpeed = 30000;
 var hashtag = 'turku';
 var fullScreenState = 0;
 
@@ -22,9 +22,7 @@ $(document).ready(function() {
     $(window).resize(function () { 
         // Call the resizePanel function
         resizePanel();
-    });
-    
-    
+    });   
      
 });
 
