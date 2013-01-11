@@ -14,7 +14,6 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <link href="js/tweet/jquery.tweet.css" media="all" rel="stylesheet" type="text/css"/>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body onclick="toggleFullScreen();">
@@ -62,18 +61,20 @@
 					            <div class="feed-twitter-container"></div>
 					            
 					            <div class="feed-foursquare-container">
-						            <div class="checkin-total">
-							            <h1>Total Checkins</h1>
-							            <h2 class="fosquare-number">831</h2>
-						            </div>
-						            <div class="user-total">
-							            <h1>Total Visitors</h1>
-							            <h2 class="fosquare-number">34</h2>
-						            </div>
-						            <div class="here-now">
-							            <h1>Here Now</h1>
-							            <h2 class="fosquare-number">4</h2>
-						            </div>
+						            <script id="fsqr-template" type="text/x-handlebars-template">
+                                        <div class="checkin-total">
+                                            <h1>Total Checkins</h1>
+                                            <h2 class="fosquare-number">{{totalCheckins}}</h2>
+                                        </div>
+                                        <div class="user-total">
+                                            <h1>Total Visitors</h1>
+                                            <h2 class="fosquare-number">{{totalVisitors}}</h2>
+                                        </div>
+                                        <div class="here-now">
+                                            <h1>Here Now</h1>
+                                            <h2 class="fosquare-number">{{hereNow}}</h2>
+                                        </div>
+                                    </script>
 					            </div>
 					            
 				            </div>
@@ -90,6 +91,7 @@
         <script src="js/handlebars.js"></script>
         <script src="js/calendarfeed.js"></script>
         <script src="js/tweet.js"></script>
+        <script src="js/foursquare.js"></script>
         <script type="text/javascript" src="http://www.google.com/calendar/feeds/asteriskiry@gmail.com/public/full?alt=json-in-script&callback=insertAgenda&orderby=starttime&max-results=4&singleevents=true&sortorder=ascending&futureevents=true"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>

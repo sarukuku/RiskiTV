@@ -7,7 +7,7 @@ var backToStartSpeed = 500;
 var fullScreenState = 0;
 
 $(document).ready(function() {
-    
+ 
     scrollToNext();
     scrollToNext();
     

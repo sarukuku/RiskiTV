@@ -10,9 +10,7 @@ function parseTweets(data) {
 
 		var title = parseTitle(data[i].text);
 		var time = parseTime(data[i].created_at);
-		console.log(title);
-		console.log(time);
-
+		
 		var context = {newstime: time, newstitle: title}
     	var html = template(context);
     	$(".news").append(html);
