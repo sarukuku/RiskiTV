@@ -4,6 +4,8 @@ var views = $('.view');
 var numViews = views.length;
 var changeSpeed = 5000;
 var backToStartSpeed = 500;
+var updateSpeed = 10000;
+var hashtag = 'turku';
 var fullScreenState = 0;
 
 $(document).ready(function() {
@@ -12,7 +14,9 @@ $(document).ready(function() {
     scrollToNext();
   
     // Set interval for scrollToNext
-    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    // Set interval for updating all the info
+    var updateInterval = setInterval(updateAllStreams, updateSpeed);
  
     // If window is resized
     $(window).resize(function () { 
@@ -82,6 +86,14 @@ function toggleFullScreen() {
 		launchFullScreen(document.documentElement);
 		fullScreenState = 1;
 	}
+}
+
+function updateAllStreams() {
+	console.log('Running update feeds');
+	getNews();
+	getFoursquare();
+	getTwitterFeed(hashtag);
+	// TODO: Calendar feed
 }
 
 function debug() {
