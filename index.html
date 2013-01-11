@@ -14,6 +14,8 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body onclick="toggleFullScreen();">
@@ -27,16 +29,19 @@
 			        <div class="view">
 			            <div class="content">
 				            <div class="calender">
-					            <script id="cal-template" type="text/x-handlebars-template">
-                                    <div class="calender-item">
-                                        <div class="dtp-wrapper">
-                                            <h2 class="calender-date">{{caldate}}</h2>
-                                            <h2 class="calender-time">{{caltime}}</h2>
-                                            <h2 class="calender-place">{{callocation}}</h2>
-                                        </div>
-                                        <h1 class="calender-title">{{caltitle}}</h1>
-                                    </div>
-                                </script>
+				            
+				            <!-- Calender item rendering template -->
+            					<script id="cal-template" type="text/x-handlebars-template">
+                        <div class="calender-item">
+                            <div class="dtp-wrapper">
+                                <h2 class="calender-date"><i class="icon-calendar"></i> {{caldate}}</h2>
+                                <h2 class="calender-time"><i class="icon-time"></i> {{caltime}}</h2>
+                                <h2 class="calender-place"><i class="icon-globe"></i> {{callocation}}</h2>
+                            </div>
+                            <h1 class="calender-title">{{caltitle}}</h1>
+                        </div>
+                      </script>
+                      
 				            </div>
 			            </div>
 			        </div>

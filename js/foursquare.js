@@ -14,11 +14,11 @@ function parseStats(data) {
 	console.log(hereNow);
 
 	var context = {totalCheckins: totalCheckins, totalVisitors: totalVisitors, hereNow: hereNow}
-    var html = template(context);
+    var html = fsqrtemplate(context);
     $(".feed-foursquare-container").append(html);
 }
 
 
-var source   = $("#fsqr-template").html();
-var template = Handlebars.compile(source);
+var fsqrsource   = $("#fsqr-template").html();
+var fsqrtemplate = Handlebars.compile(fsqrsource);
 getFoursquare();

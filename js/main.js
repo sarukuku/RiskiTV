@@ -7,18 +7,22 @@ var backToStartSpeed = 500;
 var fullScreenState = 0;
 
 $(document).ready(function() {
- 
+
+/*
     scrollToNext();
     scrollToNext();
-    
+*/
+  
     // Set interval for scrollToNext
-    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    var scrollInterval = setInterval(scrollToNext, changeSpeed);
  
     // If window is resized
     $(window).resize(function () { 
         // Call the resizePanel function
         resizePanel();
     });
+    
+    
      
 });
 
@@ -52,7 +56,7 @@ function resizePanel() {
          
 }
 
-function xlaunchFullScreen(element) {
+function launchFullScreen(element) {
   if(element.requestFullScreen) {
     element.requestFullScreen();
   } else if(element.mozRequestFullScreen) {
