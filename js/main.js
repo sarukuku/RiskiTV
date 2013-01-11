@@ -90,25 +90,31 @@ function toggleFullScreen() {
 function updateAllStreams() {
 	console.log('Running update feeds');
   
-  $(".calender").fadeOut(100, function(){
-    $(".calender").empty();
-  });
-  getCalendar();
+  if (currenView != 0) {
+    $(".calender").fadeOut(100, function(){
+      $(".calender").empty();
+    });
+    getCalendar();
+  };
+  
+  if (currenView != 1) {
+    $(".news").fadeOut(100, function(){
+      $(".news").empty();
+    });
+    getNews();
+  };
 
-  $(".news").fadeOut(100, function(){
-    $(".news").empty();
-  });
-  getNews();
+  if (currenView != 2) {
+    $(".tweets").fadeOut(100, function(){
+      $(".tweets").empty();
+    });
+    getTwitterFeed(hashtag);
 
-  $(".tweets").fadeOut(100, function(){
-    $(".tweets").empty();
-  });
-  getTwitterFeed(hashtag);
-
-  $(".foursquares").fadeOut(100, function(){
-    $(".foursquares").empty();
-  });
-	getFoursquare();
+    $(".foursquares").fadeOut(100, function(){
+      $(".foursquares").empty();
+    });
+  	getFoursquare();
+  };
 	
 	// TODO: Calendar feed
 }
