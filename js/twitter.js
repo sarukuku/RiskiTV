@@ -6,16 +6,11 @@ function getTwitterFeed(hash) {
 
 function parseTwitterFeed(data) {
 	var results = data.results;
-	console.log(results);
 	for (var i = 0; i < results.length; i++) {
 
 		var user = results[i].from_user;
 		var text = results[i].text;
 		var imgUrl = results[i].profile_image_url;
-
-		console.log(user);
-		console.log(text);
-		console.log(imgUrl);
 
 		var context = {imgUrl: imgUrl, tweetUser: user, tweetText: text}
     	var html = twittertemplate(context);
