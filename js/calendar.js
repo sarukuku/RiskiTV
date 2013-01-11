@@ -14,11 +14,6 @@ function parseCalendar(data) {
 		var location = entry[i].gd$where[0].valueString;
 		var title = entry[i].title.$t;
 
-		console.log(date);
-		console.log(time);
-		console.log(location);
-		console.log(title);
-
 		var context = {caldate: date, caltime: time, callocation: location, caltitle: title}
     	var html = template(context);
     	$(".calender").append(html).fadeIn(100);

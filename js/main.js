@@ -88,13 +88,13 @@ function toggleFullScreen() {
 }
 
 function updateAllStreams() {
-	console.log('Running update feeds');
   
   if (currenView != 0) {
     $(".calender").fadeOut(100, function(){
       $(".calender").empty();
     });
     getCalendar();
+    console.log("Updated calendar");
   };
   
   if (currenView != 1) {
@@ -102,6 +102,7 @@ function updateAllStreams() {
       $(".news").empty();
     });
     getNews();
+    console.log("Updated news");
   };
 
   if (currenView != 2) {
@@ -109,11 +110,13 @@ function updateAllStreams() {
       $(".tweets").empty();
     });
     getTwitterFeed(hashtag);
+    console.log("Updated twitterfeed");
 
     $(".foursquares").fadeOut(100, function(){
       $(".foursquares").empty();
     });
   	getFoursquare();
+    console.log("Updated foursquarefeed");
   };
 	
 	// TODO: Calendar feed
