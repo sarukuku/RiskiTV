@@ -11,11 +11,11 @@ var fullScreenState = 0;
 $(document).ready(function() {
 
     //scrollToNext();
-    //scrollToNext();
+    scrollToNext();
 
   
     // Set interval for scrollToNext
-    var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
     // Set interval for updating all the info
     var updateInterval = setInterval(updateAllStreams, updateSpeed);
  

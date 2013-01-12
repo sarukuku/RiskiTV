@@ -10,13 +10,16 @@ function parseTweets(data) {
 
 		var title = parseTitle(data[i].text);
 		var time = parseTime(data[i].created_at);
-		var url = parseUrl(data[i].text);
 
 		var context = {newstime: time, newstitle: title}
     	var html = newstemplate(context);
     	$(".news").append(html).fadeIn(100);
-    	$(".qrcode")[i].qrcode(url);
 	}
+
+	for (var i = 0; i < data.length; i++) {
+		var url = parseUrl(data[i].text);
+		$(".qrcode:nth-child(" + i + ")").qrcode(url);
+	};
 }
 
 function parseTitle(title) {
@@ -31,7 +34,7 @@ function parseTitle(title) {
 
 function parseUrl(title) {
 	title = title.split(" ");
-	var url = title[title.length];
+	var url = title[title.length-1];
 	return url;
 }
 
