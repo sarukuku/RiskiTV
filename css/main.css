@@ -281,6 +281,10 @@ body {
 	background-color: red;
 }
 
+.qrcode canvas {
+	max-height: 100%;
+}
+
 /* Feed stuff */
 
 .feed-twitter-container {
