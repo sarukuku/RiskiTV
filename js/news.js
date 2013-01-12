@@ -16,10 +16,9 @@ function parseTweets(data) {
     	$(".news").append(html).fadeIn(100);
 	}
 
-	for (var i = 0; i < data.length; i++) {
-		var url = parseUrl(data[i].text);
-		$(".qrcode:nth-child(" + i + ")").qrcode(url);
-	};
+	$('.qrcode').each(function(i) {
+    	$(this).qrcode(parseUrl(data[i].text));
+	});
 }
 
 function parseTitle(title) {
