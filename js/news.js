@@ -35,6 +35,9 @@ function parseTitle(title) {
 function parseUrl(title) {
 	title = title.split(" ");
 	var url = title[title.length-1];
+	url = url.split("(");
+	url = url[1].split(")");
+	url = url[0];
 	return url;
 }
 
