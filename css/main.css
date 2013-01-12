@@ -291,6 +291,8 @@ body {
 .qrcode canvas {
 	max-height: 100%;
 	padding: 10%;
+	display: block;
+	margin: 0 auto;
 }
 
 /* Feed stuff */
