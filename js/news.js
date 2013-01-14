@@ -53,8 +53,6 @@ function parseTime(time) {
 	return newtime;
 }
 
-
-
 var newssource   = $("#news-template").html();
 var newstemplate = Handlebars.compile(newssource);
 getNews();

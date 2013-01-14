@@ -23,8 +23,12 @@ $(document).ready(function() {
     $(window).resize(function () { 
         // Call the resizePanel function
         resizePanel();
-    });   
-     
+        
+        // Try to scale the text as big as possible
+        $('.scale-text').fitText();
+        
+    });
+    
 });
 
 
@@ -118,6 +122,5 @@ function updateAllStreams() {
   	getFoursquare();
     console.log("Updated foursquarefeed");
   };
-	
-	// TODO: Calendar feed
+
 }
