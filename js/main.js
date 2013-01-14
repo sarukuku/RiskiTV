@@ -2,7 +2,7 @@
 var currenView = 0;
 var views = $('.view');
 var numViews = views.length;
-var changeSpeed = 8000;
+var changeSpeed = 5000;
 var backToStartSpeed = 500;
 var updateSpeed = 30000;
 var hashtag = 'turku';
@@ -11,11 +11,11 @@ var fullScreenState = 0;
 $(document).ready(function() {
 
     //scrollToNext();
-    scrollToNext();
+    //scrollToNext();
 
   
     // Set interval for scrollToNext
-    //var scrollInterval = setInterval(scrollToNext, changeSpeed);
+    var scrollInterval = setInterval(scrollToNext, changeSpeed);
     // Set interval for updating all the info
     var updateInterval = setInterval(updateAllStreams, updateSpeed);
  
@@ -23,8 +23,12 @@ $(document).ready(function() {
     $(window).resize(function () { 
         // Call the resizePanel function
         resizePanel();
-    });   
-     
+        
+        // Try to scale the text as big as possible
+        $('.scale-text').fitText();
+        
+    });
+    
 });
 
 
@@ -118,6 +122,5 @@ function updateAllStreams() {
   	getFoursquare();
     console.log("Updated foursquarefeed");
   };
-	
-	// TODO: Calendar feed
+
 }
