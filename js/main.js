@@ -2,10 +2,11 @@
 var currenView = 0;
 var views = $('.view');
 var numViews = views.length;
-var changeSpeed = 5000;
-var backToStartSpeed = 500;
+var changeSpeed = 15000;
+var backToStartSpeed = 1;
+var toNextScreenSpeed = 1;
 var updateSpeed = 30000;
-var hashtag = 'turku';
+var hashtag = 'riskitv';
 var fullScreenState = 0;
 
 $(document).ready(function() {
@@ -24,9 +25,6 @@ $(document).ready(function() {
         // Call the resizePanel function
         resizePanel();
         
-        // Try to scale the text as big as possible
-        $('.scale-text').fitText();
-        
     });
     
 });
@@ -38,7 +36,7 @@ function scrollToNext() {
 		$('.wrapper').scrollTo(views.eq(0), backToStartSpeed);
 		currenView = 0;
 	} else {
-		$('.wrapper').scrollTo(views.eq(currenView+1), backToStartSpeed);
+		$('.wrapper').scrollTo(views.eq(currenView+1), toNextScreenSpeed);
 		currenView += 1;
 	}
 }

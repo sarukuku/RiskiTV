@@ -6,7 +6,7 @@ function getTwitterFeed(hash) {
 
 function parseTwitterFeed(data) {
 	var results = data.results;
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < 4; i++) {
 
 		var user = results[i].from_user;
 		var text = results[i].text;
@@ -20,4 +20,4 @@ function parseTwitterFeed(data) {
 
 var twittersource   = $("#tweet-template").html();
 var twittertemplate = Handlebars.compile(twittersource);
-getTwitterFeed("turku");
+getTwitterFeed("riskitv");
